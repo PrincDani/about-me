@@ -1,0 +1,169 @@
+/* ===== Base Styles ===== */
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .header, .footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--header-bg);
+    border-radius: 8px;
+  }
+  
+  h1 {
+    color: var(--accent-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    text-shadow:
+    1px 1px 2px #ff4081,
+    2px 2px 4px #8e2de2;
+  }
+
+
+  h2 {
+    color: var(--accent-color);
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+
+  }
+  
+  .highlight {
+    font-weight: bold;
+    color: #7289DA
+    ;
+  }
+  
+  .profile-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+
+  /*Love section with list*/
+  .loves ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+  
+  .loves > li::marker {
+    content: "💖 ";
+    color: hotpink;
+
+    font-size: 1.3em;
+  }
+
+  .loves ul li::marker {
+    content: "⭐ ";
+    color: gold;
+    font-size: 1.1em;
+  }
+  
+  a {
+    color: var(--link-color);
+  }
+
+  
+  /* ===== Responsive Text and Layout ===== */
+  section {
+    margin-bottom: 30px;
+  }
+  
+  p {
+    font-size: 1rem;
+    margin: 0 0 1em;
+  }
+  
+  /* ===== MEDIA QUERIES ===== */
+  
+  /* 1. Small phones (under 480px) */
+  @media (max-width: 480px) {
+    body {
+      font-size: 16px;
+      padding: 10px;
+    }
+  
+    .container {
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    h2 {
+      font-size: 1.4rem;
+    }
+  
+    .profile-image {
+      max-width: 100%;
+    }
+  }
+  
+  /* 2. Tablets (481px to 768px) */
+  @media (max-width: 768px) {
+    body {
+      font-size: 17px;
+    }
+  
+    .container {
+      padding: 15px;
+    }
+  
+    .header, .footer {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 2.2rem;
+    }
+  
+    h2 {
+      font-size: 1.6rem;
+    }
+  }
+
+
+  /* Default (Light Mode) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1e1e1e;
+  --accent-color: #8c40ff;
+  --header-bg: #f0f0f0;
+  --link-color: #0066cc;
+}
+
+/* Dark theme override with [data-theme="dark"] */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --accent-color: #c979ff;
+  --header-bg: #1e1e1e;
+  --link-color: #8ab4f8;
+}
+
+#theme-toggle {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
