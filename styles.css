@@ -42,11 +42,14 @@ body {
   }
   
   .highlight {
-    font-weight: bold;
-    color: #7289DA
-    ;
+    color: #7289DA;
   }
   
+  [class*="highlight"] {
+    font-weight: bold;
+  }
+  
+
   .profile-image {
     width: 100%;
     max-width: 300px;
@@ -54,7 +57,13 @@ body {
     display: block;
     margin: 0 auto;
     border-radius: 12px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+    border: 4px solid var(--accent-color); 
+
   }
+
+
+  
 
   /*Love section with list*/
   .loves ul {
@@ -74,9 +83,189 @@ body {
     color: gold;
     font-size: 1.1em;
   }
+
+  /* milestones!!*/
+  .milestones-grid {
+    padding: 2rem;
+    background: var(--bg-secondary);
+    color: var(--text-color);
+  }
+  
+  .milestones-grid h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /*  3 columns */
+    grid-template-rows: repeat(2, auto);   /*  2 rows */
+    gap: 1rem;
+  }
+  
+  .grid-item {
+    background-color: var(--accent-light);
+    border: 2px dashed var(--accent-color);
+    padding: 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  /* Spanning item */
+  .grid-span {
+    grid-column: span 2;
+    background-color: var(--highlight-color);
+  }
+  
+  /*musical instruments*/
+  .flex-highlights {
+    padding: 2rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  .flex-highlights h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  
+  .card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background-color: var(--accent-light);
+    border: 2px solid var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    flex: 1 1 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    min-width: 250px;
+  }
+  
+  .card h3 {
+    margin-top: 0;
+  }
+
+  /*contact me*/
+  .styled-form {
+    background-color: var(--accent-light);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .styled-form fieldset {
+    border: 2px solid var(--accent-color);
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .styled-form legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    padding: 0 0.5rem;
+  }
+  
+  .styled-form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  .styled-form input,
+  .styled-form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 0.3rem;
+    font-size: 1rem;
+  }
+  
+  .styled-form button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    margin-top: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .styled-form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+
+  .fancy-text::before {
+    content: "✨";
+    margin-right: 0.3rem;
+  }
+  
+  .fancy-text::after {
+    content: "✨";
+    margin-left: 0.3rem;
+  }
+  
+
+  
+  /* inline text requirement */
+  .inline-paragraph {
+    display: inline;       /* block → inline */
+    margin-right: 1rem;
+    background-color: var(--accent-light);
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+  }
+  
+
+
+  /* ✅ Responsive layout */
+  @media (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .grid-span {
+      grid-column: span 1;
+    }
+  }
+  
+
   
   a {
     color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s;
+  }
+
+  /* Hover effect for both visited & unvisited */
+  a:hover {
+    color: #ffffff;
+    background-color: var(--accent-color);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  /* Visited links look different */
+  a:visited {
+    color: purple;
+    font-style: italic;
   }
 
   
@@ -166,4 +355,9 @@ body {
   margin: 1rem;
   border-radius: 6px;
   cursor: pointer;
+}
+
+#theme-toggle:hover{
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }

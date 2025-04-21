@@ -7,21 +7,31 @@ CHOICES
 -------
 9a. Added text-shadow to <h1> for depth and visual emphasis, using layered rgba shadows.
 9b. Used clamp() for responsive font sizes on headings and body text to ensure legibility across screen sizes.
-12.
-18.
+12. Implemented advanced visual styling:
+- Applied CSS transform (scale + rotate) to dark mode toggle button on hover
+- Added box-shadow to profile image for visual depth
+- Styled image with a border (rounded)
+18.  Implemented ::before and ::after pseudo-elements to add decorative emojis around a span of text.
+Used them to create a sparkle effect (✨) around the word "creatively" on the page.
 19.
 
 JAVASCRIPT
 (Please tells us what the JavaScript does e.g. "click on the green button and it does the following...")
 ----------
-
+Click on the 'Dark Mode' button and it does the following...
+This JavaScript toggles between light and dark themes when the user clicks a button. 
+It checks the current theme using the data-theme attribute and switches between adding 
+or removing it to apply the appropriate theme.
 
 
 
 NOTES TO STAFF
 (If there is anything you need to tell us, please use the section below)
 ---------------
-
+- All links are placeholder or external.
+- The form is non-functional (no backend).
+- No email addresses are hardcoded (per project rules).
+- Fully passes HTML + CSS validation as per W3C standards.
 
 
 
